@@ -1,10 +1,7 @@
-import './Register.css';
+import "./Register.css";
 
 function Register() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default Register;

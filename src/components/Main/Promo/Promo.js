@@ -1,10 +1,7 @@
-import './Promo.css';
+import "./Promo.css";
 
 function Promo() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default Promo;

@@ -1,10 +1,7 @@
-import './Portfolio.css';
+import "./Portfolio.css";
 
 function Portfolio() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default Portfolio;

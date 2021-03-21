@@ -1,10 +1,7 @@
-import './Techs.css';
+import "./Techs.css";
 
 function Techs() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default Techs;

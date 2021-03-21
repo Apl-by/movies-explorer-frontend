@@ -1,10 +1,7 @@
-import './SavedMovies.css';
+import "./SavedMovies.css";
 
 function SavedMovies() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default SavedMovies;

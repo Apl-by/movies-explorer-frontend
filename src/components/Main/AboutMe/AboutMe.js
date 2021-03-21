@@ -1,10 +1,7 @@
-import './AboutMe.css';
+import "./AboutMe.css";
 
 function AboutMe() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default AboutMe;

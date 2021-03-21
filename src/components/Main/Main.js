@@ -1,10 +1,7 @@
-import './Main.css';
+import "./Main.css";
 
 function Main() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default Main;

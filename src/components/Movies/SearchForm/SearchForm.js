@@ -1,10 +1,7 @@
-import './SearchForm.css';
+import "./SearchForm.css";
 
 function SearchForm() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default SearchForm;

@@ -1,10 +1,7 @@
-import './Logo.css';
+import "./Logo.css";
 
 function Logo() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default Logo;

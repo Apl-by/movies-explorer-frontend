@@ -1,10 +1,7 @@
-import './Profile.css';
+import "./Profile.css";
 
 function Profile() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default Profile;

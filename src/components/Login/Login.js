@@ -1,10 +1,7 @@
-import './Login.css';
+import "./Login.css";
 
 function Login() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default Login;

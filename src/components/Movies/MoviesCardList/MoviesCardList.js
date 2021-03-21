@@ -1,10 +1,7 @@
-import './MoviesCardList.css';
+import "./MoviesCardList.css";
 
 function MoviesCardList() {
-  return (
-   <>
-   </>
-  );
+  return <></>;
 }
 
 export default MoviesCardList;
