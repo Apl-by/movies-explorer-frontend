@@ -3,7 +3,7 @@ import Logo from "../generic/Logo/Logo";
 import Button from "../generic/Button/Button";
 import Navigation from "../generic/Navigation/Navigation";
 import logo from "../../images/logo.svg";
-import { navData } from "../../utils/data";
+import { navConfig } from "./data";
 import { Link } from "react-router-dom";
 import cn from "classnames";
 
@@ -22,7 +22,7 @@ function Header({ location, isLoggedIn }) {
         <Logo logo={logo} />
         {isLoggedIn && (
           <Navigation
-            config={navData}
+            config={navConfig}
             mix="header__navigation"
             modTheme={navMod}
           />

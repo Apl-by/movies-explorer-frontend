@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "../Header/Header";
+import MainLending from "../MainLending/MainLending";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="app">
       <Header location={location} isLoggedIn={isLoggedIn} />
+      <MainLending />
     </div>
   );
 }

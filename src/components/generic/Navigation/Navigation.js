@@ -11,7 +11,7 @@ function Navigation({ config, mix, modTheme }) {
     <nav className={classNames}>
       <ul className="navigation__list">
         {config.map((i) => (
-          <li className="navigation__item" key={i.id}>
+          <li key={i.id}>
             <NavLink
               to={i.path}
               className="navigation__link"

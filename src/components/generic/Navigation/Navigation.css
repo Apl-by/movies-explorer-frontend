@@ -13,19 +13,12 @@
   flex-direction: row;
   margin: 0;
   padding: 0;
-}
-
-.navigation__item {
-  margin-right: 16px;
-}
-
-.navigation__item:last-child {
-  margin-right: 0;
+  column-gap: 16px;
 }
 
 .navigation__link {
   text-decoration: none;
-  font-family: Inter;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
