@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "../Header/Header";
 import MainLending from "../MainLending/MainLending";
+import Footer from "../Footer/Footer";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -13,6 +14,7 @@ function App() {
     <div className="app">
       <Header location={location} isLoggedIn={isLoggedIn} />
       <MainLending />
+      <Footer />
     </div>
   );
 }

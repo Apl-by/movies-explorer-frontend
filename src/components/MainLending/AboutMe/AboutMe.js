@@ -1,6 +1,7 @@
 import "./AboutMe.css";
 import student from "../../../images/student.jpg";
 import { socialLinks, infoAbout } from "./data";
+import SocialLinks from "../../generic/SocialLinks/SocialLinks";
 
 function AboutMe() {
   return (
@@ -12,20 +13,7 @@ function AboutMe() {
             <h3 className="about-me__subtitle">{infoAbout.name}</h3>
             <p className="about-me__description">{infoAbout.description}</p>
             <p className="about-me__text">{infoAbout.about}</p>
-            <ul className="about-me__list">
-              {socialLinks.map((i) => (
-                <li key={i.id}>
-                  <a
-                    href={i.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="about-me__link"
-                  >
-                    {i.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <SocialLinks links={socialLinks} />
           </div>
           <img src={student} alt="Фото студента" className="about-me__foto" />
         </div>
