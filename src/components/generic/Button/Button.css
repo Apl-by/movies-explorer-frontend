@@ -48,7 +48,7 @@
   height: 36px;
   font-size: 12px;
   line-height: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   box-sizing: border-box;
   position: relative;
 }
@@ -64,3 +64,57 @@
   bottom: 0;
   right: 0;
 }
+
+.button_type_search {
+  width: 58px;
+  height: 34px;
+  font-size: 11px;
+  line-height: 18px;
+  color: #ffffff;
+  background: #3456f3;
+  border-radius: 48px;
+  flex: 0 0 auto;
+}
+
+.button_type_save-movie {
+  width: 100px;
+  height: 29px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 11px;
+  color: #000000;
+  background: #F9F9F9;
+  border-radius: 30px;
+}
+
+.button_type_saved-movie {
+  width: 100px;
+  height: 29px;
+  background:  #FF3055;
+  background-image: url("../../../images/btn-check-mark.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+
+.button_type_delete {
+  width: 100px;
+  height: 29px;
+  background: #F9F9F9;
+  background-image: url("../../../images/delete-btn.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+
+.button_type_more-cards {
+  width: 320px;
+  height: 36px;
+  background: #F9F9F9;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 16px;
+  font-size: 12px;
+  line-height: 15px;
+}
+

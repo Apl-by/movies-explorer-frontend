@@ -11,10 +11,10 @@ function Header({ location, isLoggedIn }) {
   const { pathname: path } = location;
 
   const classNames = cn("header", { header_theme_light: path !== "/" });
+  const navMod = path === "/" ? "light" : null;
   const btnConfig = !isLoggedIn
     ? { mod: "login", value: "Войти" }
     : { mod: "account", value: "Аккаунт" };
-  const navMod = path === "/" ? "light" : null;
 
   return (
     <header className={classNames}>

@@ -29,7 +29,7 @@
   padding-bottom: 23px;
 }
 
-.about-me__box {
+.about-me__content {
   margin: 66px 0 0;
   display: flex;
   justify-content: space-between;
@@ -64,7 +64,7 @@
 }
 
 .about-me__foto {
-  width: 270;
+  width: 270px;
   height: 327px;
   object-fit: cover;
   object-position: center;
