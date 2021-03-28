@@ -2,14 +2,8 @@ import "./MoviesCard.css";
 import Button from "../generic/Button/Button";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-// Временная картинка(удалить!!!)
-import TEMPLATE_PIC from "../../images/TEMPLATE_PIC.jpg";
 
-function MoviesCard({
-  img = TEMPLATE_PIC,
-  title = "В погоне за Бенкси",
-  time = "27 минут",
-}) {
+function MoviesCard({ img, title = "В погоне за Бенкси", time = "27 минут" }) {
   //Изменение состояния кнопки(для ревью по верстке)
   let location = useLocation();
   const { pathname: path } = location;
@@ -31,7 +25,14 @@ function MoviesCard({
         <p className="movies-card__title">{title}</p>
         <p className="movies-card__time">{time}</p>
       </div>
-      <img src={img} alt="Временно" className="movies-card__poster" />
+      <div className="movies-card__stretch">
+        <div className="movies-card__size"></div>
+        <img
+          src={img}
+          alt="Если не загрузилась"
+          className="movies-card__poster"
+        />
+      </div>
       <Button
         type="submit"
         value={btnConfig.value}

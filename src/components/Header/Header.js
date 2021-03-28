@@ -7,14 +7,25 @@ import { navConfig } from "./data";
 import { Link } from "react-router-dom";
 import cn from "classnames";
 
-function Header({ location, isLoggedIn }) {
+function Header({ location, history, isLoggedIn }) {
   const { pathname: path } = location;
 
   const classNames = cn("header", { header_theme_light: path !== "/" });
   const navMod = path === "/" ? "light" : null;
   const btnConfig = !isLoggedIn
-    ? { mod: "login", value: "Войти" }
-    : { mod: "account", value: "Аккаунт" };
+    ? { push: "login", mod: "login", value: "Войти" }
+    : { push: "profile", mod: "account", value: "Аккаунт" };
+
+  const handleBtnClick = () => {
+    const { push } = btnConfig;
+    if (push === "login") {
+      history.push("/signin");
+    }
+    if (push === "profile") {
+      history.push("/profile");
+    }
+    return;
+  };
 
   return (
     <header className={classNames}>
@@ -32,7 +43,12 @@ function Header({ location, isLoggedIn }) {
             Регистрация
           </Link>
         )}
-        <Button type="button" value={btnConfig.value} modType={btnConfig.mod} />
+        <Button
+          type="button"
+          value={btnConfig.value}
+          modType={btnConfig.mod}
+          onClick={handleBtnClick}
+        />
       </div>
     </header>
   );

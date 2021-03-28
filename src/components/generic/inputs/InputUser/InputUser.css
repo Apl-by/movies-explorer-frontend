@@ -1,0 +1,33 @@
+.input-user {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 16px;
+}
+
+.input-user:nth-child(3) {
+  border-bottom: none;
+  padding-bottom: 0;
+  padding-top: 16px;
+}
+
+.input-user__name {
+  margin-right: 10px;
+  flex: 0 0 auto;
+}
+
+.input-user__input {
+  text-align: end;
+  width: 100%;
+  border: none;
+}
+
+.input__error {
+}

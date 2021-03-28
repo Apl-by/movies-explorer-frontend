@@ -36,7 +36,21 @@
   color: #A0A0A0;
 }
 
+.movies-card__stretch {
+  width: 100%;
+  display: grid;
+  grid-template-areas: 'img';
+}
+
+.movies-card__size {
+  grid-area: img;
+  width: 100%;
+  padding-bottom: 55.55%;
+  background: #F9F9F9;
+}
+
 .movies-card__poster {
+  grid-area: img;
   width: 100%;
   object-fit: cover;
   object-position: center;

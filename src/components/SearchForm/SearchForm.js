@@ -1,22 +1,16 @@
 import "./SearchForm.css";
+import Form from "../generic/Form/Form";
+import InputSearch from "../generic/inputs/InputSearch/InputSearch";
 import Button from "../generic/Button/Button";
 import Checkbox from "../generic/Checkbox/Checkbox";
 
-function SearchForm({ onSearch }) {
+function SearchForm({ onSubmit }) {
   return (
     <section className="search-form">
-      <form className="search-form__form" onSubmit={onSearch}>
-        <label className="search-form__label">
-          <span className="search-form__icon" />
-          <input
-            type="text"
-            className="search-form__input"
-            placeholder="Фильм"
-          />
-          <span className="search-form__input-error"></span>
-        </label>
+      <Form modType="search" onSubmit={onSubmit}>
+        <InputSearch type="text" name="search" placeholder="Фильм" />
         <Button type="submit" value="Найти" modType="search" />
-      </form>
+      </Form>
       <div className="search-form__checkbox">
         <Checkbox name="check" />
         <p className="search-form__text">Короткометражки</p>

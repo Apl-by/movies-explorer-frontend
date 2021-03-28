@@ -83,14 +83,14 @@
   font-size: 12px;
   line-height: 11px;
   color: #000000;
-  background: #F9F9F9;
+  background: #f9f9f9;
   border-radius: 30px;
 }
 
 .button_type_saved-movie {
   width: 100px;
   height: 29px;
-  background:  #FF3055;
+  background: #ff3055;
   background-image: url("../../../images/btn-check-mark.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -100,7 +100,7 @@
 .button_type_delete {
   width: 100px;
   height: 29px;
-  background: #F9F9F9;
+  background: #f9f9f9;
   background-image: url("../../../images/delete-btn.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -110,7 +110,7 @@
 .button_type_more-cards {
   width: 320px;
   height: 36px;
-  background: #F9F9F9;
+  background: #f9f9f9;
   border-radius: 6px;
   font-size: 12px;
   line-height: 16px;
@@ -118,3 +118,15 @@
   line-height: 15px;
 }
 
+.button_type_edit {
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.button_type_exit {
+  font-size: 13px;
+  line-height: 16px;
+  color: #ff3055;
+}

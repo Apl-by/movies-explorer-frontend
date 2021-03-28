@@ -12,13 +12,15 @@ function MainSavedMovies({ props }) {
     setIsSearch(!isSearch);
   };
 
-  const fakeArr = Array.from({ length: 3 }, (i) => i);
+  const fakeArr = Array.from({ length: 3 }, (i) => {
+    return { img: null };
+  });
   //--------------------------------------------------
 
   return (
     <main className="main-saved-movies">
       {isSearch && <Preloader />}
-      <SearchForm onSearch={handleSearch} />
+      <SearchForm onSubmit={handleSearch} />
       <MoviesCardList movies={fakeArr} modType="saved-movies" />
     </main>
   );

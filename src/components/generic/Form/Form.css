@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form_type_user {
+  max-width: 410px;
+}
+
+.form_type_auth {
+  max-width: 396px;
+}
+
+.form_type_search {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 15px;
+}

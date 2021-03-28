@@ -12,7 +12,7 @@ function MoviesCardList({ movies, children, modType }) {
       <ul className="movies-card-list__list">
         {movies.map((i, ind) => (
           <li key={ind}>
-            <MoviesCard />
+            <MoviesCard img={i.img} />
           </li>
         ))}
       </ul>
