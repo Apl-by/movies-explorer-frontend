@@ -4,7 +4,10 @@ import MainLending from "../MainLending/MainLending";
 import MainMovies from "../MainMovies/MainMovies";
 import MainSavedMovies from "../MainSavedMovies/MainSavedMovies";
 import Profile from "../Profile/Profile";
+import Register from "../Register/Register";
+import Login from "../Login/Login";
 import Footer from "../Footer/Footer";
+import NotFound from "../NotFound/NotFound";
 import { headerPathes, footerPathes } from "./data";
 import { useState } from "react";
 import { useLocation, useHistory, Switch, Route } from "react-router-dom";
@@ -12,9 +15,24 @@ import { useLocation, useHistory, Switch, Route } from "react-router-dom";
 function App() {
   let location = useLocation();
   const history = useHistory();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // Для ревью
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setIsLoggedIn(true);
+    history.push("/movies");
+  };
 
+  const handleExitProfile = () => {
+    setIsLoggedIn(false);
+    history.push("/signin");
+  };
+
+  const handleBack = () => {
+    history.goBack();
+  };
   console.log(location);
+  //------------------------------------
   return (
     <div className="app">
       {headerPathes.includes(location.pathname) && (
@@ -32,7 +50,16 @@ function App() {
           <MainSavedMovies />
         </Route>
         <Route path="/profile">
-          <Profile />
+          <Profile onClick={handleExitProfile} />
+        </Route>
+        <Route path="/signup">
+          <Register />
+        </Route>
+        <Route path="/signin">
+          <Login onSubmit={handleLogin} />
+        </Route>
+        <Route path="*">
+          <NotFound onClick={handleBack} />
         </Route>
       </Switch>
 
