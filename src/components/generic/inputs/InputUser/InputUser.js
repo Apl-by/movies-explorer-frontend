@@ -12,7 +12,7 @@ function InputUser({ type, name, value, onChange, fieldName, error }) {
         className="input-user__input"
         onChange={onChange}
       />
-      <span className="input-user__error">{error}</span>
+      <span className="input-user__error">error</span>
     </label>
   );
 }

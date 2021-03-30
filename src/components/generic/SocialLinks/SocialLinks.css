@@ -20,4 +20,18 @@
   display: flex;
   text-decoration: none;
   color: inherit;
+  transition: opacity .2s linear, transform .2s linear;
+
+}
+
+.social-links__link:hover {
+  opacity: .7;
+}
+
+.social-links__link:active {
+  transform: scale(.97);
+}
+
+.social-links__link:focus {
+  outline: .8px solid #A0A0A0;
 }

@@ -31,10 +31,29 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: #A0A0A0;
+  color: #a0a0a0;
+  transition: opacity .2s linear, transform .2s linear;
+}
+
+.login__link:hover {
+  opacity: .8;
+}
+
+.login__link:active {
+  transform: scale(.98);
+}
+
+.login__link:focus {
+  outline: .8px solid #a0a0a0;
 }
 
 .login__link-word {
-  color: #3456F3;
+  color: #3456f3;
   margin-left: 6px;
+}
+
+@media screen and (max-width: 950px) {
+  .login {
+    padding: 232px 0 0;
+  }
 }

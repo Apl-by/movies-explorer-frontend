@@ -68,5 +68,34 @@
   height: 327px;
   object-fit: cover;
   object-position: center;
-  border-radius: 10px
+  border-radius: 10px;
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 950px) {
+  .about-me__container {
+    padding: 90px 50px;
+  }
+
+  .about-me__subtitle {
+    font-size: 40px;
+    line-height: 40px;
+    margin: 0 0 16px;
+  }
+
+  .about-me__description {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 20px;
+  }
+
+  .about-me__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__foto {
+    width: 250px;
+    height: 307px;
+  }
 }

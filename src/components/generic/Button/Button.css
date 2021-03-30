@@ -7,7 +7,22 @@
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 500;
+  transition: opacity .2s linear, transform .2s linear;
+
 }
+
+.button:hover {
+  opacity: .8;
+}
+
+.button:active {
+  transform: scale(.99);
+}
+
+.button:focus {
+  outline: .8px solid #A0A0A0;
+}
+
 
 .button_type_login {
   width: 76px;
@@ -146,4 +161,28 @@
   font-size: 14px;
   line-height: 17px;
   color: #3456f3;
+}
+
+.button_type_burger {
+  background-image: url("../../../images/burger.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 23px;
+}
+
+.button_type_burger-light {
+  background-image: url("../../../images/burger-light.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 23px;
+}
+
+.button_type_close {
+  background-image: url("../../../images/close-btn.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
 }

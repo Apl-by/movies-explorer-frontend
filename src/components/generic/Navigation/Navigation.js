@@ -2,7 +2,7 @@ import "./Navigation.css";
 import { NavLink } from "react-router-dom";
 import cn from "classnames";
 
-function Navigation({ config, mix, modTheme }) {
+function Navigation({ config, mix, modTheme, close }) {
   const classNames = cn("navigation", mix, {
     [`navigation_theme_${modTheme}`]: modTheme,
   });
@@ -11,11 +11,13 @@ function Navigation({ config, mix, modTheme }) {
     <nav className={classNames}>
       <ul className="navigation__list">
         {config.map((i) => (
-          <li key={i.id}>
+          <li className="navigation__item" key={i.id}>
             <NavLink
               to={i.path}
+              exact={i.path === "/"}
               className="navigation__link"
               activeClassName="navigation__link_active"
+              onClick={close}
             >
               {i.value}
             </NavLink>

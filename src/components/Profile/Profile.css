@@ -12,10 +12,23 @@
 }
 
 .profile__edit-btn {
-  margin: 220px 0 16px;
+  margin: 204px 0 16px;
 }
 
 .profile__submit-btn {
   margin: 220px 0 0;
+}
 
+@media screen and (max-width: 950px) {
+  .profile {
+    padding: 236px 0 0;
+  }
+
+  .profile__title {
+    margin: 0 0 96px;
+  }
+
+  .profile__submit-btn {
+    margin: 210px 0 0;
+  }
 }

@@ -10,7 +10,7 @@
   height: 14px;
   background: #ebebeb;
   border-radius: 20px;
-  transition: background-color 0.2s linear;
+  transition: background-color .2s linear;
 }
 
 .checkbox__custom::before {
@@ -22,7 +22,7 @@
   position: absolute;
   top: 2px;
   left: 2px;
-  transition: background-color, left 0.2s linear;
+  transition: background-color .2s linear, left .2s linear;
 }
 
 .checkbox__input {

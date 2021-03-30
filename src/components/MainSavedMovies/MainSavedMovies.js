@@ -21,7 +21,7 @@ function MainSavedMovies({ props }) {
     <main className="main-saved-movies">
       {isSearch && <Preloader />}
       <SearchForm onSubmit={handleSearch} />
-      <MoviesCardList movies={fakeArr} modType="saved-movies" />
+      <MoviesCardList movies={fakeArr} />
     </main>
   );
 }

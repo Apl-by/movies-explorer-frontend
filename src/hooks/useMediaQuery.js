@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 // Пример использования хука:
 // const isMobil = useMediaQuery("max-width: 768px") -- // true/false
 
-const useMediaQuery = (reqire) => {
-  const mediaQuery = window.matchMedia(`(${reqire})`);
+const useMediaQuery = (value) => {
+  const mediaQuery = window.matchMedia(`(${value})`);
 
   const [matched, setMatched] = useState(mediaQuery.matches);
 

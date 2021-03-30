@@ -14,7 +14,7 @@ function InputAuth({ type, name, value, onChange, fieldName, error, mix }) {
         className="input-auth__input"
         onChange={onChange}
       />
-      <span className="input-auth__error">{error}</span>
+      <span className="input-auth__error">error</span>
     </label>
   );
 }

@@ -32,9 +32,28 @@
   font-size: 14px;
   line-height: 17px;
   color: #A0A0A0;
+  transition: opacity .2s linear, transform .2s linear;
+}
+
+.register__link:hover {
+  opacity: .8;
+}
+
+.register__link:active {
+  transform: scale(.98);
+}
+
+.register__link:focus {
+  outline: .8px solid #a0a0a0;
 }
 
 .register__link-word {
   color: #3456F3;
   margin-left: 6px;
+}
+
+@media screen and (max-width: 950px) {
+  .register {
+    padding: 232px 0 0;
+  }
 }

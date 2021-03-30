@@ -22,3 +22,9 @@
   line-height: 19px;
   margin-bottom: 184px;
 }
+
+@media screen and (max-width: 950px) {
+  .not-found__title {
+    margin: 408px 0 5px;
+  }
+}
