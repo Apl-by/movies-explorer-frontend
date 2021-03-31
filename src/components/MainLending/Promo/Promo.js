@@ -2,7 +2,7 @@ import "./Promo.css";
 import banner from "../../../images/banner.svg";
 import Button from "../../generic/Button/Button";
 
-function Promo() {
+function Promo({ onClick }) {
   return (
     <section className="promo">
       <div className="promo__container">
@@ -22,7 +22,12 @@ function Promo() {
             className="promo__banner"
           />
         </div>
-        <Button type="button" value="Узнать больше" modType="promo" />
+        <Button
+          type="button"
+          value="Узнать больше"
+          modType="promo"
+          onClick={onClick}
+        />
       </div>
     </section>
   );

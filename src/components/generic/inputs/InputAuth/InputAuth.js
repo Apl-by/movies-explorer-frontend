@@ -1,7 +1,19 @@
 import "./InputAuth.css";
 import cn from "classnames";
 
-function InputAuth({ type, name, value, onChange, fieldName, error, mix }) {
+function InputAuth({
+  type,
+  name,
+  value,
+  onChange,
+  required,
+  min,
+  max,
+  patern,
+  fieldName,
+  error,
+  mix,
+}) {
   const classNames = cn("input-auth", mix);
 
   return (
@@ -13,6 +25,10 @@ function InputAuth({ type, name, value, onChange, fieldName, error, mix }) {
         value={value}
         className="input-auth__input"
         onChange={onChange}
+        required={required}
+        min={min}
+        max={max}
+        pattern={patern}
       />
       <span className="input-auth__error">error</span>
     </label>

@@ -8,7 +8,13 @@ function SearchForm({ onSubmit }) {
   return (
     <section className="search-form">
       <Form modType="search" onSubmit={onSubmit}>
-        <InputSearch type="text" name="search" placeholder="Фильм" />
+        <InputSearch
+          type="text"
+          name="search"
+          placeholder="Фильм"
+          min="1"
+          max="50"
+        />
         <Button type="submit" value="Найти" modType="search" />
       </Form>
       <Checkbox

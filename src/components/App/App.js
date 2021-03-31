@@ -9,6 +9,7 @@ import Login from "../Login/Login";
 import Footer from "../Footer/Footer";
 import NotFound from "../NotFound/NotFound";
 import SideBar from "../SideBar/SideBar";
+import Modal from "../generic/Modal/Modal";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { headerPathes, footerPathes } from "./data";
 import { useState, useEffect } from "react";
@@ -19,25 +20,30 @@ function App() {
   let location = useLocation();
   const history = useHistory();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isOpenSideBar, setIsOpenSideBar] = useState(false);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [apiError, setApiError] = useState({});
 
   const handleBurgerClick = () => {
-    setIsOpenSideBar(true);
+    setIsSideBarOpen(true);
   };
 
   const handleCloseSideBar = () => {
-    setIsOpenSideBar(false);
+    setIsSideBarOpen(false);
+  };
+
+  const handleCloseModal = () => {
+    setApiError({});
   };
 
   useEffect(() => {
-    if (!isOpenSideBar) return;
+    if (!isSideBarOpen) return;
 
     if (!isTablet) {
-      setIsOpenSideBar(false);
+      setIsSideBarOpen(false);
     }
-  }, [isTablet, isOpenSideBar]);
+  }, [isTablet, isSideBarOpen]);
 
-  // Для ревью
+  // Для ревью -------------------------
   const handleLogin = (e) => {
     e.preventDefault();
     setIsLoggedIn(true);
@@ -51,6 +57,10 @@ function App() {
 
   const handleBack = () => {
     history.goBack();
+  };
+
+  const handleOpenModal = () => {
+    setApiError({ err: "Ошибка" });
   };
   console.log(location);
   //------------------------------------
@@ -78,7 +88,7 @@ function App() {
           <MainSavedMovies />
         </Route>
         <Route path="/profile">
-          <Profile onClick={handleExitProfile} />
+          <Profile onClick={handleExitProfile} openModal={handleOpenModal} />
         </Route>
         <Route path="/signup">
           <Register />
@@ -96,8 +106,10 @@ function App() {
       <SideBar
         history={history}
         close={handleCloseSideBar}
-        isOpen={isOpenSideBar}
+        isOpen={isSideBarOpen}
       />
+
+      <Modal apiError={apiError} onClose={handleCloseModal} />
     </div>
   );
 }

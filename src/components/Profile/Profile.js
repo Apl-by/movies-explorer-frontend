@@ -5,7 +5,7 @@ import InputUser from "../generic/inputs/InputUser/InputUser";
 import Button from "../generic/Button/Button";
 import { useState } from "react";
 
-function Profile({ onClick }) {
+function Profile({ onClick, openModal }) {
   // Для ревью
   const [isEdit, setIsEdit] = useState(false);
   const handleClickOnEdit = () => {
@@ -14,7 +14,7 @@ function Profile({ onClick }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsEdit(false);
+    openModal();
   };
   //---------------------------------------------------
 
@@ -27,12 +27,16 @@ function Profile({ onClick }) {
           name="user-name"
           fieldName="Имя"
           value="Александр"
+          required={true}
+          min="2"
+          max="30"
         />
         <InputUser
           type="email"
           name="email"
           fieldName="E-mail"
           value="qwety@asdf.by"
+          required={true}
         />
         {!isEdit && (
           <>
@@ -52,12 +56,12 @@ function Profile({ onClick }) {
           </>
         )}
         {isEdit && (
-          <Button
-            type="submit"
-            value="Сохранить"
-            modType="auth"
-            mix="profile__submit-btn"
-          />
+          <div className="profile__save">
+            <Button type="submit" value="Сохранить" modType="auth" />
+            <span className="profile__error">
+              При обновлении профиля произошла ошибка
+            </span>
+          </div>
         )}
       </Form>
     </main>

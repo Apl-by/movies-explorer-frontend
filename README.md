@@ -1,3 +1,6 @@
+# Ссылка на проект (для ревью по верстке):
+- https://aplby.students.nomoredomains.icu;
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

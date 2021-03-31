@@ -18,14 +18,24 @@ function Register() {
           name="user-name"
           fieldName="Имя"
           mix="register__input"
+          required={true}
+          min="2"
+          max="30"
         />
         <InputAuth
           type="email"
           name="email"
           fieldName="E-mail"
           mix="register__input"
+          required={true}
         />
-        <InputAuth type="password" name="password" fieldName="Пароль" />
+        <InputAuth
+          type="password"
+          name="password"
+          fieldName="Пароль"
+          required={true}
+          min="5"
+        />
         <Button
           type="submit"
           value="Зарегистрироваться"

@@ -15,9 +15,28 @@
   margin: 204px 0 16px;
 }
 
-.profile__submit-btn {
+.profile__save {
   margin: 220px 0 0;
+  position: relative;
 }
+
+.profile__error {
+  position: absolute;
+  top: -34px;
+  left: 0;
+  width: 100%;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  color: #ff004c;
+}
+
+/* .profile__submit-btn {
+  margin: 220px 0 0;
+} */
 
 @media screen and (max-width: 950px) {
   .profile {
@@ -28,7 +47,7 @@
     margin: 0 0 96px;
   }
 
-  .profile__submit-btn {
+  .profile__save {
     margin: 210px 0 0;
   }
 }
@@ -46,7 +65,7 @@
     margin: 363px 0 16px;
   }
 
-  .profile__submit-btn {
+  .profile__save {
     margin: 366px 0 0;
   }
 }

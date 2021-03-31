@@ -18,8 +18,15 @@ function Login({ onSubmit }) {
           name="email"
           fieldName="E-mail"
           mix="login__input"
+          required={true}
         />
-        <InputAuth type="password" name="password" fieldName="Пароль" />
+        <InputAuth
+          type="password"
+          name="password"
+          fieldName="Пароль"
+          required={true}
+          min="5"
+        />
         <Button type="submit" value="Войти" modType="auth" mix="login__btn" />
         <Link to="/signup" className="login__link">
           Ещё не зарегистрированы?
