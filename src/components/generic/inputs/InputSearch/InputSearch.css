@@ -14,10 +14,16 @@
 }
 
 .input-search__input {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 34px;
   text-align: center;
   width: 100%;
   border: none;
   padding: 0;
+  min-height: 34px;
 }
 
 .input-search__input:focus {
@@ -32,4 +38,20 @@
 }
 
 .input-search__error {
+}
+
+@media screen and (max-width: 600px) {
+  .input-search__icon {
+    display: none;
+  }
+
+  .input-search__input {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .input-search__input::placeholder {
+    font-size: 18px;
+    line-height: 22px;
+  }
 }

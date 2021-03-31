@@ -34,3 +34,14 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .movies-card-list {
+    padding: 40px 10px 80px;
+  }
+
+  .movies-card-list__list {
+    grid-template-columns: repeat(1, minmax(250px, 360px));
+    row-gap: 16px;
+  }
+}
+

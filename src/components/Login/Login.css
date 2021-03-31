@@ -1,7 +1,7 @@
 .login {
   display: flex;
   justify-content: center;
-  padding: 70px 0 0;
+  padding: 70px 0;
   max-width: 1280px;
   width: 100%;
   box-sizing: border-box;
@@ -32,19 +32,19 @@
   font-size: 14px;
   line-height: 17px;
   color: #a0a0a0;
-  transition: opacity .2s linear, transform .2s linear;
+  transition: opacity 0.2s linear, transform 0.2s linear;
 }
 
 .login__link:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .login__link:active {
-  transform: scale(.98);
+  transform: scale(0.98);
 }
 
 .login__link:focus {
-  outline: .8px solid #a0a0a0;
+  outline: 0.8px solid #a0a0a0;
 }
 
 .login__link-word {
@@ -54,6 +54,30 @@
 
 @media screen and (max-width: 950px) {
   .login {
-    padding: 232px 0 0;
+    padding: 232px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login {
+    padding: 56px 30px 30px;
+  }
+
+  .login__logo {
+    align-self: center;
+  }
+
+  .login__title {
+    margin: 50px 0 80px;
+    align-self: center;
+  }
+
+  .login__btn {
+    margin: 309px 0 14px;
+  }
+
+  .login__link {
+    font-size: 12px;
+    line-height: 15px;
   }
 }

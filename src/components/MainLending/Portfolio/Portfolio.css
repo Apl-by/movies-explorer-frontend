@@ -84,3 +84,22 @@
     line-height: 50px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .portfolio__container {
+    padding: 0 14px 70px;
+  }
+
+  .portfolio__title {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 40px;
+  }
+
+  .portfolio__link {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  
+}

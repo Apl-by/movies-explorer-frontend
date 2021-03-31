@@ -73,3 +73,9 @@
     border-bottom: 2px solid #000000;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .navigation__item {
+    margin-bottom: 16px;
+  }
+}

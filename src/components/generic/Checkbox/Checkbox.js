@@ -1,8 +1,11 @@
 import "./Checkbox.css";
+import cn from "classnames";
 
-function Checkbox({ name, value, onChange, isChecked }) {
+function Checkbox({ name, value, onChange, isChecked, mix, caption }) {
+  const classNames = cn("checkbox", mix);
+
   return (
-    <label className="checkbox">
+    <label className={classNames}>
       <input
         type="checkbox"
         className="checkbox__input"
@@ -11,7 +14,7 @@ function Checkbox({ name, value, onChange, isChecked }) {
         onChange={onChange}
         checked={isChecked}
       />
-      <span className="checkbox__custom"></span>
+      <span className="checkbox__custom">{caption}</span>
     </label>
   );
 }

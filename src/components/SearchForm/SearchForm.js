@@ -11,10 +11,11 @@ function SearchForm({ onSubmit }) {
         <InputSearch type="text" name="search" placeholder="Фильм" />
         <Button type="submit" value="Найти" modType="search" />
       </Form>
-      <div className="search-form__checkbox">
-        <Checkbox name="check" />
-        <p className="search-form__text">Короткометражки</p>
-      </div>
+      <Checkbox
+        name="check"
+        mix="search-form__checkbox"
+        caption="Короткометражки"
+      />
     </section>
   );
 }

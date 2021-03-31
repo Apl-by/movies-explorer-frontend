@@ -59,3 +59,21 @@
 .movies-card__btn {
   margin: 18px 0;
 }
+
+@media screen and (max-width: 600px) {
+  .movies-card__info {
+    padding: 14px;
+  }
+
+  .movies-card__title {
+    font-size: 12px;
+  }
+
+  .movies-card__time {
+    font-size: 10px;
+  }
+
+  .movies-card__btn {
+    margin: 14px 0;
+  }
+}

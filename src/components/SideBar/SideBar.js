@@ -49,6 +49,7 @@ function SideBar({ history, close, isOpen }) {
           type="button"
           value="Аккаунт"
           modType="account"
+          mix="side-bar__account"
           onClick={handleBtnClick}
         />
       </div>

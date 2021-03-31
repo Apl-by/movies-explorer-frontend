@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: 574px;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   background: #073042;
 }
@@ -13,7 +12,7 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 1280px;
-  padding: 0 70px;
+  padding: 0 70px 75px;
 }
 
 .promo__box {
@@ -51,6 +50,13 @@
   margin: 0;
 }
 
+.promo__banner {
+  object-fit: cover;
+  object-position: center;
+  width: 310px;
+  height: 304px;
+}
+
 @media screen and (max-width: 1100px) {
   .promo__title {
     font-size: 46px;
@@ -83,6 +89,32 @@
   }
 
   .promo__text {
-   text-align: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .promo__container {
+    padding: 0 6px 30px;
+  }
+
+  .promo__box {
+    padding-top: 70px;
+    margin-bottom: 80px;
+  }
+
+  .promo__title {
+    font-size: 30px;
+    line-height: 38px;
+    margin: 44px 0 24px;
+  }
+
+  .promo__text {
+    max-width: 260px;
+  }
+
+  .promo__banner {
+    width: 210px;
+    height: 206px;
   }
 }
