@@ -58,7 +58,7 @@
 }
 
 .portfolio__link::after {
-  content: "↗";
+  content: "\2197";
   margin-left: auto;
 }
 
@@ -100,6 +100,4 @@
     font-size: 18px;
     line-height: 28px;
   }
-
-  
 }

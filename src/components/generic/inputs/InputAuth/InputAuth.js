@@ -26,8 +26,8 @@ function InputAuth({
         className="input-auth__input"
         onChange={onChange}
         required={required}
-        min={min}
-        max={max}
+        minLength={min}
+        maxLength={max}
         pattern={patern}
       />
       <span className="input-auth__error">error</span>

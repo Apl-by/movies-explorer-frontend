@@ -24,8 +24,8 @@ function InputUser({
         className="input-user__input"
         onChange={onChange}
         required={required}
-        min={min}
-        max={max}
+        minLength={min}
+        maxLength={max}
         pattern={patern}
       />
       <span className="input-user__error">error</span>
