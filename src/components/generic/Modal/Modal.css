@@ -1,0 +1,62 @@
+.modal {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #F8F8F8;
+  border-radius: 5px;
+  border: 0.4px solid #073042;
+  width: 100%;
+  max-width: 400px;
+  min-height: 180px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  padding: 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s linear, opacity 0.2s linear;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+
+}
+
+.modal_visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__title {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0 0 15px;
+}
+
+.modal__message {
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0 0 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .modal {
+    max-width: 310px;
+    min-height: 150px;
+  }
+
+  .modal__title {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 0 10px;
+  }
+
+  .modal__message {
+    font-size: 10px;
+    line-height: 16px;
+    margin: 0 0 10px;
+  }
+}

@@ -1,0 +1,25 @@
+.logo {
+  text-decoration: none;
+  transition: opacity .2s linear, transform .2s linear;
+}
+
+.logo:hover {
+  opacity: .8;
+}
+
+.logo:active {
+  transform: scale(.97);
+}
+
+.logo:focus {
+  outline: .8px solid #A0A0A0;
+}
+
+
+.logo__img {
+  height: 38px;
+  width: 38px;
+  object-fit: cover;
+  object-position: center;
+  display: flex;
+}

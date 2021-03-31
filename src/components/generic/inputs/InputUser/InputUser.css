@@ -1,0 +1,45 @@
+.input-user {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.input-user:nth-child(3) {
+  border-bottom: none;
+  padding-top: 16px;
+}
+
+.input-user__name {
+  margin-right: 10px;
+  flex: 0 0 auto;
+}
+
+.input-user__input {
+  text-align: end;
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+
+.input-user__input:focus {
+  outline: .8px solid #a0a0a0;
+}
+
+.input-user__error {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ff3055;
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+}

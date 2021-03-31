@@ -1,0 +1,232 @@
+.button {
+  box-shadow: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  transition: opacity 0.2s linear, transform 0.2s linear;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:active {
+  transform: scale(0.99);
+}
+
+.button:focus {
+  outline: 0.8px solid #a0a0a0;
+}
+
+.button_type_login {
+  width: 76px;
+  height: 32px;
+  background: #2be080;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.button_type_account {
+  text-align: start;
+  text-indent: 12px;
+  font-size: 13px;
+  line-height: 12px;
+  width: 100px;
+  height: 32px;
+  background: #ffffff;
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 40px;
+  position: relative;
+  flex: 0 0 auto;
+
+}
+
+.button_type_account::after {
+  content: "";
+  background-image: url("../../../images/account.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+.button_type_promo {
+  width: 129px;
+  height: 36px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.button_type_promo::before {
+  content: "";
+  opacity: 0.6;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.button_type_search {
+  width: 58px;
+  height: 34px;
+  font-size: 11px;
+  line-height: 18px;
+  color: #ffffff;
+  background: #3456f3;
+  border-radius: 48px;
+  flex: 0 0 auto;
+}
+
+.button_type_save-movie {
+  width: 100px;
+  height: 29px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 11px;
+  color: #000000;
+  background: #f9f9f9;
+  border-radius: 30px;
+}
+
+.button_type_saved-movie {
+  width: 100px;
+  height: 29px;
+  background: #ff3055;
+  background-image: url("../../../images/btn-check-mark.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+
+.button_type_delete {
+  width: 100px;
+  height: 29px;
+  background: #f9f9f9;
+  background-image: url("../../../images/delete-btn.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+
+.button_type_more-cards {
+  width: 320px;
+  height: 36px;
+  background: #f9f9f9;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.button_type_edit {
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.button_type_exit {
+  font-size: 13px;
+  line-height: 16px;
+  color: #ff3055;
+}
+
+.button_type_auth {
+  width: 396px;
+  height: 45px;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  background: #3456f3;
+  border-radius: 3px;
+}
+
+.button_type_back {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #3456f3;
+}
+
+.button_type_burger {
+  background-image: url("../../../images/burger.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 23px;
+}
+
+.button_type_burger-light {
+  background-image: url("../../../images/burger-light.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 23px;
+}
+
+.button_type_close {
+  background-image: url("../../../images/close-btn.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+}
+
+.button_type_modal {
+  width: 129px;
+  height: 36px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #073042;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 600px) {
+  .button_type_login {
+    width: 54px;
+    height: 26px;
+    font-size: 10px;
+  }
+
+  .button_type_more-cards {
+    width: 240px;
+  }
+
+  .button_type_edit {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .button_type_exit {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .button_type_auth {
+    width: 260px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .button_type_back {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
