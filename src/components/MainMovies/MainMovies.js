@@ -5,19 +5,17 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Button from "../generic/Button/Button";
 import { useState } from "react";
 
-import TEMPLATE_PIC from "../../images/TEMPLATE_PIC.jpg";
-
 function MainMovies() {
   // Для ревью
   const [isSearch, setIsSearch] = useState(false);
   const handleSearch = (e) => {
     e.preventDefault();
-    setIsSearch(!isSearch);
+    setIsSearch(true);
   };
 
-  const fakeArr = Array.from({ length: 12 }, (i, ind) =>
-    ind !== 2 ? { img: TEMPLATE_PIC } : { img: null }
-  );
+  const fakeArr = Array.from({ length: 12 }, (i, ind) => {
+    return { img: null };
+  });
   //--------------------------------------------------
 
   return (

@@ -12,8 +12,8 @@ function SearchForm({ onSubmit }) {
           type="text"
           name="search"
           placeholder="Фильм"
-          min="1"
-          max="50"
+          required={true}
+          maxLength="50"
         />
         <Button type="submit" value="Найти" modType="search" />
       </Form>

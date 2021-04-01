@@ -5,7 +5,7 @@ import InputUser from "../generic/inputs/InputUser/InputUser";
 import Button from "../generic/Button/Button";
 import { useState } from "react";
 
-function Profile({ onClick, openModal }) {
+function Profile({ onClick }) {
   // Для ревью
   const [isEdit, setIsEdit] = useState(false);
   const handleClickOnEdit = () => {
@@ -14,7 +14,6 @@ function Profile({ onClick, openModal }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    openModal();
   };
   //---------------------------------------------------
 
@@ -28,8 +27,8 @@ function Profile({ onClick, openModal }) {
           fieldName="Имя"
           value="Александр"
           required={true}
-          min="2"
-          max="30"
+          minLength="2"
+          maxLength="30"
         />
         <InputUser
           type="email"

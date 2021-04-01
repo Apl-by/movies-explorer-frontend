@@ -7,8 +7,8 @@ function InputAuth({
   value,
   onChange,
   required,
-  min,
-  max,
+  minLength,
+  maxLength,
   patern,
   fieldName,
   error,
@@ -26,8 +26,8 @@ function InputAuth({
         className="input-auth__input"
         onChange={onChange}
         required={required}
-        minLength={min}
-        maxLength={max}
+        minLength={minLength}
+        maxLength={maxLength}
         pattern={patern}
       />
       <span className="input-auth__error">error</span>

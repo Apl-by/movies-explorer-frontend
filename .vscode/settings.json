@@ -4,7 +4,9 @@
 
     "markdown"
   ],
-  "emmet.extensionsPath": "",
+  "emmet.extensionsPath": [
+    ""
+  ],
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   }

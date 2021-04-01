@@ -19,8 +19,8 @@ function Register() {
           fieldName="Имя"
           mix="register__input"
           required={true}
-          min="2"
-          max="30"
+          minLength="2"
+          maxLength="30"
         />
         <InputAuth
           type="email"
@@ -34,7 +34,7 @@ function Register() {
           name="password"
           fieldName="Пароль"
           required={true}
-          min="5"
+          minLength="5"
         />
         <Button
           type="submit"

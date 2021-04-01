@@ -16,12 +16,12 @@ import { useState, useEffect } from "react";
 import { useLocation, useHistory, Switch, Route } from "react-router-dom";
 
 function App() {
-  let isTablet = useMediaQuery("max-width: 950px");
-  let location = useLocation();
-  const history = useHistory();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const [apiError, setApiError] = useState({});
+  const history = useHistory();
+  let isTablet = useMediaQuery("max-width: 950px");
+  let location = useLocation();
 
   const handleBurgerClick = () => {
     setIsSideBarOpen(true);
@@ -88,7 +88,7 @@ function App() {
           <MainSavedMovies />
         </Route>
         <Route path="/profile">
-          <Profile onClick={handleExitProfile} openModal={handleOpenModal} />
+          <Profile onClick={handleExitProfile} />
         </Route>
         <Route path="/signup">
           <Register />

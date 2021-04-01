@@ -25,7 +25,7 @@ function Login({ onSubmit }) {
           name="password"
           fieldName="Пароль"
           required={true}
-          min="5"
+          minLength="5"
         />
         <Button type="submit" value="Войти" modType="auth" mix="login__btn" />
         <Link to="/signup" className="login__link">
