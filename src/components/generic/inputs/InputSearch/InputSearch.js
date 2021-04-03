@@ -9,7 +9,7 @@ function InputSearch({
   required,
   minLength,
   maxLength,
-  patern,
+  pattern,
   error,
 }) {
   return (
@@ -25,7 +25,7 @@ function InputSearch({
         required={required}
         minLength={minLength}
         maxLength={maxLength}
-        pattern={patern}
+        pattern={pattern}
       />
       <span className="input-search__error">{error}</span>
     </label>

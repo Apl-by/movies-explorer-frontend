@@ -50,6 +50,10 @@ function App() {
     history.push("/movies");
   };
 
+  const handleRegister = (e) => {
+    e.preventDefault();
+  };
+
   const handleExitProfile = () => {
     setIsLoggedIn(false);
     history.push("/signin");
@@ -91,7 +95,7 @@ function App() {
           <Profile onClick={handleExitProfile} />
         </Route>
         <Route path="/signup">
-          <Register />
+          <Register onSubmit={handleRegister} />
         </Route>
         <Route path="/signin">
           <Login onSubmit={handleLogin} />

@@ -9,28 +9,35 @@ function InputAuth({
   required,
   minLength,
   maxLength,
-  patern,
+  pattern,
   fieldName,
   error,
   mix,
 }) {
-  const classNames = cn("input-auth", mix);
+  const cnInputAuth = cn(
+    "input-auth",
+    { "input-auth_valid": !error && value },
+    mix
+  );
+  const cnInputAuthInput = cn("input-auth__input", {
+    "input-auth__input_invalid": error,
+  });
 
   return (
-    <label className={classNames}>
+    <label className={cnInputAuth}>
       <span className="input-auth__name">{fieldName}</span>
       <input
         type={type}
         name={name}
         value={value}
-        className="input-auth__input"
+        className={cnInputAuthInput}
         onChange={onChange}
         required={required}
         minLength={minLength}
         maxLength={maxLength}
-        pattern={patern}
+        pattern={pattern}
       />
-      <span className="input-auth__error">error</span>
+      <span className="input-auth__error">{error}</span>
     </label>
   );
 }

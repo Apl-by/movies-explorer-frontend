@@ -8,7 +8,7 @@ function InputUser({
   required,
   minLength,
   maxLength,
-  patern,
+  pattern,
   fieldName,
   error,
 }) {
@@ -26,7 +26,7 @@ function InputUser({
         required={required}
         minLength={minLength}
         maxLength={maxLength}
-        pattern={patern}
+        pattern={pattern}
       />
       <span className="input-user__error">error</span>
     </label>

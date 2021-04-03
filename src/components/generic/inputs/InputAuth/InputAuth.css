@@ -43,5 +43,7 @@
   line-height: 12px;
   color: #ff3055;
   position: absolute;
-  bottom: -18px;
+  top: 46px;
+  background-color: #FFFFFF;
+  z-index: 10;
 }
