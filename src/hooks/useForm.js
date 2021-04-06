@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import validator from "validator";
+import isEmail from "validator/lib/isEmail";
 
 function useForm() {
   const [values, setValues] = useState({});
@@ -12,9 +12,15 @@ function useForm() {
     const browserErr = target.validationMessage;
 
     if (name === "email" && (!browserErr || target.validity.customError)) {
-      validator.isEmail(value)
+      isEmail(value)
         ? target.setCustomValidity("")
         : target.setCustomValidity("Некорректный адрес электронной почты");
+    }
+
+    if (name === "search") {
+      target.validity.valueMissing
+        ? target.setCustomValidity("Нужно ввести ключевое слово")
+        : target.setCustomValidity("");
     }
 
     setValues({ ...values, [name]: value });

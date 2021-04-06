@@ -12,16 +12,30 @@ import SideBar from "../SideBar/SideBar";
 import Modal from "../generic/Modal/Modal";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { headerPathes, footerPathes } from "./data";
+import { moviesApi } from "../../utils/MoviesApi";
+import { handleMoviesData } from "../../utils/utils";
 import { useState, useEffect } from "react";
 import { useLocation, useHistory, Switch, Route } from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  const [apiError, setApiError] = useState({});
+  const [apiError, setApiError] = useState([]);
+  const [isSearch, setIsSearch] = useState(false);
   const history = useHistory();
   let isTablet = useMediaQuery("max-width: 950px");
   let location = useLocation();
+
+  const handleSearchMovies = (value) => {
+    setIsSearch(true);
+    moviesApi
+      .getMovies()
+      .then((res) => {
+        handleMoviesData(res);
+      })
+      .catch((err) => setApiError([err.name, err.message]))
+      .finally(() => setIsSearch(false));
+  };
 
   const handleBurgerClick = () => {
     setIsSideBarOpen(true);
@@ -86,7 +100,7 @@ function App() {
           <MainLending />
         </Route>
         <Route path="/movies">
-          <MainMovies />
+          <MainMovies isSearch={isSearch} onSubmit={handleSearchMovies} />
         </Route>
         <Route path="/saved-movies">
           <MainSavedMovies />
