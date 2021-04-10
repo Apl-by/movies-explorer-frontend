@@ -13,28 +13,52 @@ import Modal from "../generic/Modal/Modal";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { headerPathes, footerPathes } from "./data";
 import { moviesApi } from "../../utils/MoviesApi";
-import { handleMoviesData } from "../../utils/utils";
+import { handleMoviesData, handleKeyword } from "../../utils/utils";
+import { ERR_API } from "../../utils/config";
 import { useState, useEffect } from "react";
 import { useLocation, useHistory, Switch, Route } from "react-router-dom";
 
 function App() {
+  const [allMovies, setAllMovies] = useState(
+    JSON.parse(localStorage.getItem("movies"))
+  );
+  const [foundMovies, setFoundMovies] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const [apiError, setApiError] = useState([]);
   const [isSearch, setIsSearch] = useState(false);
+  const [wasSearch, setWasSearch] = useState(false);
   const history = useHistory();
-  let isTablet = useMediaQuery("max-width: 950px");
+  let isTablet = useMediaQuery("max-width: 768px");
+  let isMobile = useMediaQuery("max-width: 480px");
   let location = useLocation();
+  console.log(allMovies);
+  console.log(foundMovies);
 
-  const handleSearchMovies = (value) => {
+  const handleSearchMovies = (keyword) => {
     setIsSearch(true);
-    moviesApi
-      .getMovies()
-      .then((res) => {
-        handleMoviesData(res);
-      })
-      .catch((err) => setApiError([err.name, err.message]))
-      .finally(() => setIsSearch(false));
+
+    if (!allMovies) {
+      moviesApi
+        .getMovies()
+        .then((res) => {
+          const movies = handleMoviesData(res);
+          localStorage.setItem("movies", JSON.stringify(movies));
+          setAllMovies(movies);
+          setFoundMovies(handleKeyword(allMovies, keyword));
+          setWasSearch(true);
+        })
+        .catch((err) => {
+          setApiError([err.name, ERR_API]);
+          setWasSearch(false);
+        })
+        .finally(() => setIsSearch(false));
+      return;
+    }
+
+    setFoundMovies(handleKeyword(allMovies, keyword));
+    setWasSearch(true);
+    setIsSearch(false);
   };
 
   const handleBurgerClick = () => {
@@ -77,10 +101,6 @@ function App() {
     history.goBack();
   };
 
-  const handleOpenModal = () => {
-    setApiError({ err: "Ошибка" });
-  };
-  console.log(location);
   //------------------------------------
 
   return (
@@ -100,7 +120,14 @@ function App() {
           <MainLending />
         </Route>
         <Route path="/movies">
-          <MainMovies isSearch={isSearch} onSubmit={handleSearchMovies} />
+          <MainMovies
+            isSearch={isSearch}
+            wasSearch={wasSearch}
+            movies={foundMovies}
+            onSubmit={handleSearchMovies}
+            isTablet={isTablet}
+            isMobile={isMobile}
+          />
         </Route>
         <Route path="/saved-movies">
           <MainSavedMovies />

@@ -1,13 +1,13 @@
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList({ movies, children, modType }) {
+function MoviesCardList({ movies, children }) {
   return (
     <section className="movies-card-list">
       <ul className="movies-card-list__list">
-        {movies.map((i, ind) => (
-          <li key={ind}>
-            <MoviesCard img={i.img} />
+        {movies.map((i) => (
+          <li key={i.movieId}>
+            <MoviesCard movie={i} />
           </li>
         ))}
       </ul>

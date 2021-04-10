@@ -3,7 +3,7 @@ import Button from "../generic/Button/Button";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-function MoviesCard({ img, title = "В погоне за Бенкси", time = "27 минут" }) {
+function MoviesCard({ movie }) {
   //Изменение состояния кнопки(для ревью по верстке)
   let location = useLocation();
   const { pathname: path } = location;
@@ -18,28 +18,39 @@ function MoviesCard({ img, title = "В погоне за Бенкси", time = "
       ? { value: "", modType: "saved-movie" }
       : { value: "Сохранить", modType: "save-movie" };
   //--------------------------------------------------
+  const declension = String(movie.duration).match(/(?<!1)1$/)
+    ? "минутa"
+    : String(movie.duration).match(/(?<!1)[234]$/)
+    ? "минуты"
+    : "минут";
 
   return (
     <div className="movies-card">
       <div className="movies-card__info">
-        <p className="movies-card__title">{title}</p>
-        <p className="movies-card__time">{time}</p>
+        <p className="movies-card__title">{movie.nameRU}</p>
+        <p className="movies-card__time">{`${movie.duration} ${declension}`}</p>
       </div>
-      <div className="movies-card__stretch">
-        <div className="movies-card__size"></div>
+      <a
+        href={movie.trailer}
+        target="_blank"
+        rel="noreferrer"
+        className="movies-card__link"
+      >
+        <span className="movies-card__stretch"></span>
         <img
-          src={img}
-          alt="Если не загрузилась"
+          src={movie.image}
+          alt={movie.nameEN}
           className="movies-card__poster"
         />
+      </a>
+      <div className="movies-card__btn">
+        <Button
+          type="submit"
+          value={btnConfig.value}
+          modType={btnConfig.modType}
+          onClick={handleClick}
+        />
       </div>
-      <Button
-        type="submit"
-        value={btnConfig.value}
-        modType={btnConfig.modType}
-        mix="movies-card__btn"
-        onClick={handleClick}
-      />
     </div>
   );
 }

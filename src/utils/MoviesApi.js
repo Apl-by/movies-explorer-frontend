@@ -1,10 +1,9 @@
+import { BASE_URL_MOVIES_API, ERR_API } from "./config";
+
 const options = {
-  baseUrl: "https://api.nomoreparties.co/beatfilm-movies",
+  baseUrl: BASE_URL_MOVIES_API,
   headers: { "Content-Type": "application/json" },
 };
-const errMoviesApi =
-  "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз";
-
 class MoviesApi {
   constructor(options) {
     this._baseUrl = options.baseUrl;
@@ -12,7 +11,7 @@ class MoviesApi {
   }
 
   getMovies() {
-    return fetch(this._baseUrl, {
+    return fetch(`${this._baseUrl}/beatfilm-movies`, {
       headers: this._headers,
     }).then((res) => {
       if (res.ok) {
@@ -20,7 +19,7 @@ class MoviesApi {
       }
       return Promise.reject({
         name: res.status,
-        message: errMoviesApi,
+        message: ERR_API,
       });
     });
   }

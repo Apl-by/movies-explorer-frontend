@@ -21,7 +21,7 @@ function SearchForm({ onSubmit }) {
     setError(err);
     if (err !== "") return;
 
-    onSubmit(value);
+    onSubmit(value.trim());
   };
 
   return (
