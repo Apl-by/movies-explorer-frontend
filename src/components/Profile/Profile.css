@@ -34,10 +34,6 @@
   color: #ff004c;
 }
 
-/* .profile__submit-btn {
-  margin: 220px 0 0;
-} */
-
 @media screen and (max-width: 950px) {
   .profile {
     padding: 236px 0 262px;

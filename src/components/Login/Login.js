@@ -8,12 +8,17 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import useForm from "../../hooks/useForm";
 
-function Login({ onSubmit }) {
-  const { values, errors, isValid, handleChange, resetForm } = useForm();
+function Login({ onSubmit, apiError }) {
+  const { values, errors, isValid, handleChange } = useForm();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(values);
+  };
 
   return (
     <main className="login">
-      <Form modType="auth" onSubmit={onSubmit} noValidate={true}>
+      <Form modType="auth" onSubmit={handleSubmit} noValidate={true}>
         <Logo logo={logo} mix="login__logo" />
         <Title title="Рады видеть!" mix="login__title" />
         <InputAuth
@@ -36,17 +41,20 @@ function Login({ onSubmit }) {
           required={true}
           minLength="5"
         />
-        <Button
-          type="submit"
-          value="Войти"
-          modType="auth"
-          mix="login__btn"
-          disabled={!isValid}
-        />
-        <Link to="/signup" className="login__link">
-          Ещё не зарегистрированы?
-          <span className="login__link-word">Регистрация</span>
-        </Link>
+        <div className="login__click">
+          <Button
+            type="submit"
+            value="Войти"
+            modType="auth"
+            mix="login__btn"
+            disabled={!isValid}
+          />
+          <span className="login__error">{apiError}</span>
+          <Link to="/signup" className="login__link">
+            Ещё не зарегистрированы?
+            <span className="login__link-word">Регистрация</span>
+          </Link>
+        </div>
       </Form>
     </main>
   );

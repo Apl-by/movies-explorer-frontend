@@ -5,9 +5,12 @@ import Button from "../generic/Button/Button";
 import Checkbox from "../generic/Checkbox/Checkbox";
 import useForm from "../../hooks/useForm";
 import { defaultErr } from "./data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function SearchForm({ onSubmit }) {
+function SearchForm({ onSubmit, parent }) {
+  const [isChecked, setIsChecked] = useState(false);
+  const [wasCheck, setWasCheck] = useState(false);
+  const [submitedInput, setSubmitedInput] = useState("");
   const [error, setError] = useState("");
   const {
     values: { search: value = "" },
@@ -15,13 +18,31 @@ function SearchForm({ onSubmit }) {
     handleChange,
   } = useForm();
 
+  useEffect(() => {
+    if (wasCheck && parent) {
+      onSubmit(value.trim(), isChecked);
+      setWasCheck(false);
+      return;
+    }
+
+    if (!submitedInput || !wasCheck) return;
+    onSubmit(value.trim(), isChecked);
+    setWasCheck(false);
+  }, [isChecked, submitedInput, wasCheck, onSubmit, value, parent]);
+
+  const handleCheckBox = () => {
+    setIsChecked(!isChecked);
+    setWasCheck(true);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setError(err);
     if (err !== "") return;
 
-    onSubmit(value.trim());
+    onSubmit(value.trim(), isChecked);
+    setSubmitedInput(value.trim());
   };
 
   return (
@@ -43,6 +64,8 @@ function SearchForm({ onSubmit }) {
         name="check"
         mix="search-form__checkbox"
         caption="Короткометражки"
+        onChange={handleCheckBox}
+        isChecked={isChecked}
       />
     </section>
   );

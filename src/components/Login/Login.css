@@ -22,8 +22,30 @@
   margin-bottom: 24px;
 }
 
+.login__click {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 221px 0 0;
+  position: relative;
+}
+
 .login__btn {
-  margin: 221px 0 16px;
+  margin: 0 0 16px;
+}
+
+.login__error {
+  position: absolute;
+  top: -34px;
+  left: 0;
+  width: 100%;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  color: #ff004c;
 }
 
 .login__link {
@@ -72,8 +94,12 @@
     align-self: center;
   }
 
+  .login__click {
+    margin: 309px 0 0;
+  }
+
   .login__btn {
-    margin: 309px 0 14px;
+    margin: 0 0 14px;
   }
 
   .login__link {

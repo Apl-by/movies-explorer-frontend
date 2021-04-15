@@ -8,19 +8,24 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import useForm from "../../hooks/useForm";
 
-function Register({ onSubmit }) {
-  const { values, errors, isValid, handleChange, resetForm } = useForm();
+function Register({ onSubmit, apiError }) {
+  const { values, errors, isValid, handleChange } = useForm();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(values);
+  };
 
   return (
     <main className="register">
-      <Form modType="auth" onSubmit={onSubmit} noValidate={true}>
+      <Form modType="auth" onSubmit={handleSubmit} noValidate={true}>
         <Logo logo={logo} mix="register__logo" />
         <Title title="Добро пожаловать!" mix="register__title" />
         <InputAuth
           type="text"
-          name="user-name"
-          value={values["user-name"] || ""}
-          error={errors["user-name"] || ""}
+          name="name"
+          value={values.name || ""}
+          error={errors.name || ""}
           onChange={handleChange}
           fieldName="Имя"
           mix="register__input"
@@ -49,17 +54,20 @@ function Register({ onSubmit }) {
           required={true}
           minLength="5"
         />
-        <Button
-          type="submit"
-          value="Зарегистрироваться"
-          modType="auth"
-          mix="register__btn"
-          disabled={!isValid}
-        />
-        <Link to="/signin" className="register__link">
-          Уже зарегистрированы?
-          <span className="register__link-word">Войти</span>
-        </Link>
+        <div className="register__click">
+          <Button
+            type="submit"
+            value="Зарегистрироваться"
+            modType="auth"
+            mix="register__btn"
+            disabled={!isValid}
+          />
+          <span className="register__error">{apiError}</span>
+          <Link to="/signin" className="register__link">
+            Уже зарегистрированы?
+            <span className="register__link-word">Войти</span>
+          </Link>
+        </div>
       </Form>
     </main>
   );

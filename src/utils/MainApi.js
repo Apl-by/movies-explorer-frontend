@@ -1,6 +1,7 @@
+import { BASE_URL_MAIN_API } from "./config";
+
 const options = {
-  // baseUrl: "https://api.aplby.students.nomoredomains.icu",
-  baseUrl: "http://localhost:3000",
+  baseUrl: BASE_URL_MAIN_API,
   headers: { "Content-Type": "application/json" },
 };
 
@@ -39,6 +40,7 @@ class MainApi {
   login(data) {
     return fetch(`${this._baseUrl}/signin`, {
       method: "POST",
+      credentials: "include",
       headers: this._headers,
       body: JSON.stringify(data),
     })
@@ -48,6 +50,7 @@ class MainApi {
 
   signout() {
     return fetch(`${this._baseUrl}/signout`, {
+      credentials: "include",
       method: "POST",
       headers: this._headers,
     })
@@ -57,7 +60,8 @@ class MainApi {
 
   getUser() {
     return fetch(`${this._baseUrl}/users/me`, {
-      headers: { ...this._headers, credentials: "include" },
+      credentials: "include",
+      headers: this._headers,
     })
       .then(this._handleResToJson)
       .then(this._handleResponse);
@@ -66,7 +70,8 @@ class MainApi {
   updateUser(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
-      headers: { ...this._headers, credentials: "include" },
+      credentials: "include",
+      headers: this._headers,
       body: JSON.stringify(data),
     })
       .then(this._handleResToJson)
@@ -75,27 +80,29 @@ class MainApi {
 
   getMovies() {
     return fetch(`${this._baseUrl}/movies`, {
-      headers: { ...this._headers, credentials: "include" },
+      credentials: "include",
+      headers: this._headers,
     })
       .then(this._handleResToJson)
       .then(this._handleResponse);
   }
 
-  createMovies(data) {
+  createMovies(movieData) {
     return fetch(`${this._baseUrl}/movies`, {
       method: "POST",
-      headers: { ...this._headers, credentials: "include" },
-      body: JSON.stringify(data),
+      credentials: "include",
+      headers: this._headers,
+      body: JSON.stringify(movieData),
     })
       .then(this._handleResToJson)
       .then(this._handleResponse);
   }
 
-  deleteMovies(data) {
-    return fetch(`${this._baseUrl}/movies/movieId`, {
+  deleteMovies(_id) {
+    return fetch(`${this._baseUrl}/movies/${_id}`, {
       method: "DELETE",
-      headers: { ...this._headers, credentials: "include" },
-      body: JSON.stringify(data),
+      credentials: "include",
+      headers: this._headers,
     })
       .then(this._handleResToJson)
       .then(this._handleResponse);

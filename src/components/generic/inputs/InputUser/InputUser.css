@@ -15,7 +15,7 @@
 
 .input-user:nth-child(3) {
   border-bottom: none;
-  padding-top: 16px;
+  margin-top: 16px;
 }
 
 .input-user__name {
@@ -40,6 +40,8 @@
   line-height: 12px;
   color: #ff3055;
   position: absolute;
-  bottom: 3px;
   right: 0;
+  top: 20px;
+  background-color: #FFFFFF;
+  z-index: 10;
 }

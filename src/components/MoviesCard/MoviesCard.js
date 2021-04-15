@@ -1,28 +1,32 @@
 import "./MoviesCard.css";
 import Button from "../generic/Button/Button";
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-function MoviesCard({ movie }) {
-  //Изменение состояния кнопки(для ревью по верстке)
+function MoviesCard({ movie, deleteMovie, saveMovie }) {
   let location = useLocation();
   const { pathname: path } = location;
-  const [isSaved, setIsSaved] = useState(false);
-  const handleClick = (e) => {
-    setIsSaved(!isSaved);
-  };
+  const isSaved = movie._id;
+
   const btnConfig =
     path === "/saved-movies"
       ? { value: "", modType: "delete" }
       : isSaved
       ? { value: "", modType: "saved-movie" }
       : { value: "Сохранить", modType: "save-movie" };
-  //--------------------------------------------------
+
   const declension = String(movie.duration).match(/(?<!1)1$/)
     ? "минутa"
     : String(movie.duration).match(/(?<!1)[234]$/)
     ? "минуты"
     : "минут";
+
+  const handleClick = () => {
+    if (movie._id) {
+      deleteMovie(movie);
+      return;
+    }
+    saveMovie(movie);
+  };
 
   return (
     <div className="movies-card">
