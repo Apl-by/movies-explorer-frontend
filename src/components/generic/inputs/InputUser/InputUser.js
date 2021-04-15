@@ -6,11 +6,13 @@ function InputUser({
   value,
   onChange,
   required,
-  min,
-  max,
-  patern,
+  minLength,
+  maxLength,
+  pattern,
   fieldName,
   error,
+  readOnly,
+  anchor,
 }) {
   return (
     <label className="input-user">
@@ -18,17 +20,17 @@ function InputUser({
       <input
         type={type}
         name={name}
-        // value={value}
-        // сделать value через onChange
-        defaultValue={value}
+        value={value}
         className="input-user__input"
         onChange={onChange}
         required={required}
-        minLength={min}
-        maxLength={max}
-        pattern={patern}
+        minLength={minLength}
+        maxLength={maxLength}
+        pattern={pattern}
+        readOnly={readOnly}
+        ref={anchor}
       />
-      <span className="input-user__error">error</span>
+      <span className="input-user__error">{error}</span>
     </label>
   );
 }

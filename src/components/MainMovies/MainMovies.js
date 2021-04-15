@@ -3,30 +3,55 @@ import Preloader from "../generic/Preloader/Preloader";
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Button from "../generic/Button/Button";
-import { useState } from "react";
+import { useEffect } from "react";
+import { BTN_MARGIN } from "./data";
 
-import TEMPLATE_PIC from "../../images/TEMPLATE_PIC.jpg";
+function MainMovies({
+  isSearch,
+  wasSearch,
+  onSubmit,
+  movies,
+  deleteMovie,
+  saveMovie,
+  addCards,
+  scrollY,
+}) {
+  useEffect(() => {
+    window.scrollTo({
+      top: scrollY,
+      behavior: "smooth",
+    });
+  }, [scrollY]);
 
-function MainMovies() {
-  // Для ревью
-  const [isSearch, setIsSearch] = useState(false);
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setIsSearch(!isSearch);
+  const handleClickBtn = (e) => {
+    const scrollY =
+      window.pageYOffset + e.target.getBoundingClientRect().top - BTN_MARGIN;
+    addCards(scrollY);
   };
-
-  const fakeArr = Array.from({ length: 12 }, (i, ind) =>
-    ind !== 2 ? { img: TEMPLATE_PIC } : { img: null }
-  );
-  //--------------------------------------------------
 
   return (
     <main className="main-movies">
+      <SearchForm onSubmit={onSubmit} />
       {isSearch && <Preloader />}
-      <SearchForm onSubmit={handleSearch} />
-      <MoviesCardList movies={fakeArr}>
-        <Button type="button" value="Ещё" modType="more-cards" />
-      </MoviesCardList>
+      {!movies.forRender.length && wasSearch && (
+        <p className="main-movies__not-found">Ничего не найдено :(</p>
+      )}
+      {wasSearch && (
+        <MoviesCardList
+          movies={movies.forRender}
+          deleteMovie={deleteMovie}
+          saveMovie={saveMovie}
+        >
+          {!!movies.rest.length && (
+            <Button
+              type="button"
+              value="Ещё"
+              modType="more-cards"
+              onClick={handleClickBtn}
+            />
+          )}
+        </MoviesCardList>
+      )}
     </main>
   );
 }

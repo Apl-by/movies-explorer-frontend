@@ -7,9 +7,9 @@ function InputSearch({
   placeholder,
   onChange,
   required,
-  min,
-  max,
-  patern,
+  minLength,
+  maxLength,
+  pattern,
   error,
 }) {
   return (
@@ -23,9 +23,9 @@ function InputSearch({
         placeholder={placeholder}
         onChange={onChange}
         required={required}
-        minLength={min}
-        maxLength={max}
-        pattern={patern}
+        minLength={minLength}
+        maxLength={maxLength}
+        pattern={pattern}
       />
       <span className="input-search__error">{error}</span>
     </label>

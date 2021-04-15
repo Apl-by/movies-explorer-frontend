@@ -6,16 +6,27 @@ import InputAuth from "../generic/inputs/InputAuth/InputAuth";
 import Button from "../generic/Button/Button";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
+import useForm from "../../hooks/useForm";
 
-function Login({ onSubmit }) {
+function Login({ onSubmit, apiError }) {
+  const { values, errors, isValid, handleChange } = useForm();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(values);
+  };
+
   return (
     <main className="login">
-      <Form modType="auth" onSubmit={onSubmit}>
+      <Form modType="auth" onSubmit={handleSubmit} noValidate={true}>
         <Logo logo={logo} mix="login__logo" />
         <Title title="Рады видеть!" mix="login__title" />
         <InputAuth
           type="email"
           name="email"
+          value={values.email || ""}
+          error={errors.email || ""}
+          onChange={handleChange}
           fieldName="E-mail"
           mix="login__input"
           required={true}
@@ -23,15 +34,27 @@ function Login({ onSubmit }) {
         <InputAuth
           type="password"
           name="password"
+          value={values.password || ""}
+          error={errors.password || ""}
+          onChange={handleChange}
           fieldName="Пароль"
           required={true}
-          min="5"
+          minLength="5"
         />
-        <Button type="submit" value="Войти" modType="auth" mix="login__btn" />
-        <Link to="/signup" className="login__link">
-          Ещё не зарегистрированы?
-          <span className="login__link-word">Регистрация</span>
-        </Link>
+        <div className="login__click">
+          <Button
+            type="submit"
+            value="Войти"
+            modType="auth"
+            mix="login__btn"
+            disabled={!isValid}
+          />
+          <span className="login__error">{apiError}</span>
+          <Link to="/signup" className="login__link">
+            Ещё не зарегистрированы?
+            <span className="login__link-word">Регистрация</span>
+          </Link>
+        </div>
       </Form>
     </main>
   );
