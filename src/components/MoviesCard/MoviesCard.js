@@ -14,9 +14,9 @@ function MoviesCard({ movie, deleteMovie, saveMovie }) {
       ? { value: "", modType: "saved-movie" }
       : { value: "Сохранить", modType: "save-movie" };
 
-  const declension = String(movie.duration).match(/(?<!1)1$/)
+  const declension = String(movie.duration).match(/[^1]1$|^1$/)
     ? "минутa"
-    : String(movie.duration).match(/(?<!1)[234]$/)
+    : String(movie.duration).match(/[^1][234]$|^[234]$/)
     ? "минуты"
     : "минут";
 
