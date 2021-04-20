@@ -4,8 +4,8 @@
 __Movies-explorer-frontend__ является front-end частью cервиса movies-explorer, в котором можно найти фильмы по запросу и сохранить в личном кабинете. Включает в себя регистрацию, авторизацию пользователей, поиск фильмов по ключевым словам, сохранение фильмов, редактирование личного профиля.  
 Ссылки на проект:
 - https://apl-by.site;  
-Figma:  
-- https://www.figma.com/file/mwu9ylluzZGB6zaBGvjbWM/Diploma-(%D0%9B%D0%BE%D0%B3%D1%83%D0%BD%D0%BE%D0%B2)?node-id=932%3A3407&viewport=-5088%2C-400%2C0.5543531775474548;   
+
+- Figma: https://www.figma.com/file/mwu9ylluzZGB6zaBGvjbWM/Diploma-(%D0%9B%D0%BE%D0%B3%D1%83%D0%BD%D0%BE%D0%B2)?node-id=932%3A3407&viewport=-5088%2C-400%2C0.5543531775474548;   
 
 Ссылка на back-end часть дипломного проекта: https://github.com/Apl-by/movies-explorer-api;
  ### Роуты и эндпоинты  
