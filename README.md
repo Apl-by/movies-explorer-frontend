@@ -7,7 +7,7 @@ __Movies-explorer-frontend__ является front-end частью cервис
 
 - Figma: https://www.figma.com/file/mwu9ylluzZGB6zaBGvjbWM/Diploma-(%D0%9B%D0%BE%D0%B3%D1%83%D0%BD%D0%BE%D0%B2)?node-id=932%3A3407&viewport=-5088%2C-400%2C0.5543531775474548;   
 
-Ссылка на back-end часть дипломного проекта: https://github.com/Apl-by/movies-explorer-api;
+Ссылка на back-end часть дипломного проекта: https://github.com/apl-by/movies-explorer-api;
  ### Роуты и эндпоинты  
  ```
  #возвращает информацию о пользователе (email и имя)
